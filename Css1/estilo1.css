@@ -23,12 +23,9 @@
  }
  */
 
- body{
-   background-image: url(../imagenes/fondo6.gif);
- }
-
+ 
  header{
-   /*  background-color: gold; */
+   background-color:rgba(0, 0, 0, 0.236);
    color: white;
  }
 
@@ -58,7 +55,7 @@ svg{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr 1fr .5fr;
-    background-color: rgba(11, 11, 11, 0.659);
+    background-color:rgba(243, 6, 6, 0.659);
    
     gap: 1rem;
 
@@ -124,4 +121,49 @@ svg{
 .footer{
    grid-column: 1/7;
    grid-row: 5/6;
+}
+body{
+  min-height: 100vh;
+  background-color: rgb(5, 5, 5);
+}
+.container{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.bubbles{
+  position: relative;
+  display: flex;
+}
+.bubbles span{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: aqua;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44,
+  0 0 50px #4fc3dc,
+  0 0 100px #4fc3dc ;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s/var(--i));
+}
+.bubbles span:nth-child(even){
+  background: rgb(220, 20, 143);
+  box-shadow: 0 0 0 10px #06d3ee44,
+  0 0 50px #db19d5,
+  0 0 100px #dc1aa2 ;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s/var(--i));
+}
+@keyframes animate{
+  0%
+  {
+      transform: translateY(100vh) scale(0);
+  }
+  100%
+  {
+      transform: translateY(-10vh) scale(1);
+  }
 }
